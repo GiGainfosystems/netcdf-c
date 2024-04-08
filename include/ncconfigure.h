@@ -59,7 +59,8 @@ char* strdup(const char*);
 
 #ifndef HAVE_STRLCAT
 #ifndef strlcat
-size_t strlcat(char*,const char*,size_t);
+#define strlcat nc_strlcat
+size_t nc_strlcat(char*,const char*,size_t);
 #endif
 #endif
 

@@ -328,7 +328,7 @@ strdup(const char* s)
  * If retval >= dsize, truncation occurred.
  */
 EXTERNL size_t
-strlcat(char* dst, const char* src, size_t dsize)
+nc_strlcat(char* dst, const char* src, size_t dsize)
 {
 	const char *odst = dst;
 	const char *osrc = src;
