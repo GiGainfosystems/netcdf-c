@@ -569,7 +569,7 @@ rcequal(NCRCentry* e1, NCRCentry* e2)
     if(e2->host == NULL) nulltest |= 2;
     switch (nulltest) {
     case 0: if(strcmp(e1->host,e2->host) != 0) {return 0;}  break;
-    case 1: return 0;
+    case 1: break;
     case 2: return 0;
     case 3: break;
     default: return 0;
@@ -580,7 +580,7 @@ rcequal(NCRCentry* e1, NCRCentry* e2)
     if(e2->urlpath == NULL) nulltest |= 2;
     switch (nulltest) {
     case 0: if(strcmp(e1->urlpath,e2->urlpath) != 0) {return 0;} break;
-    case 1: return 0;
+    case 1: break;
     case 2: return 0;
     case 3: break;
     default: return 0;
