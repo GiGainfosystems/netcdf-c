@@ -680,6 +680,9 @@ IF(USE_HDF5)
   #
   # This script will attempt to determine the version of the HDF5 library programatically.
   ##
+  set(HDF5_C_LIBRARY $ENV{HDF5_C_LIBRARY})
+  set(HDF5_HL_LIBRARY $ENV{HDF5_HL_LIBRARY})
+  set(HDF5_INCLUDE_DIR $ENV{HDF5_INCLUDE_DIR})
   IF(HDF5_C_LIBRARY AND HDF5_HL_LIBRARY AND HDF5_INCLUDE_DIR)
     SET(HDF5_LIBRARIES ${HDF5_C_LIBRARY} ${HDF5_HL_LIBRARY})
     SET(HDF5_C_LIBRARIES ${HDF5_C_LIBRARY})
@@ -714,6 +717,7 @@ IF(USE_HDF5)
     ENDIF()
 
   ELSE(HDF5_C_LIBRARY AND HDF5_HL_LIBRARY AND HDF5_INCLUDE_DIR) # We are seeking out HDF5 with Find Package.
+    message(FATAL_ERROR "HDF5 SHOULD BE SPECIFIED AT THIS POINT FOR THIS BUILD")
     ###
     # For now we assume that if we are building netcdf
     # as a shared library, we will use hdf5 as a shared
